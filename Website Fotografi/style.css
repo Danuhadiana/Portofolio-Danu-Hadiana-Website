@@ -1,0 +1,193 @@
+/* Reset gaya default browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+#home {
+  text-align: center;
+  padding: 50px 20px;
+  background: #eee;
+}
+
+#home img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* Gallery */
+#gallery {
+  padding: 40px 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-grid img {
+  position: relative;
+}
+.gallery-grid img:hover::after {
+  content: "Klik untuk lihat";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Tombol X di gallery/foto yang di interaksi */
+#closeBtn {
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#closeBtn:hover {
+  color: red; /* jadi merah saat hover */
+}
+
+/* About */
+#about {
+  padding: 40px 20px;
+  background: #fff;
+}
+
+/* Contact */
+#contact {
+  padding: 40px 20px;
+  background: #eee;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+}
+
+/* For Mobile */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Hamburrger Section */
+nav ul {
+  display: none;
+}
+nav ul.show {
+  display: flex;
+  flex-direction: column;
+}
+
+header button {
+  background: #444;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+header button:hover {
+  background: #666;
+}
+
+/* Default: tampilkan menu di desktop */
+nav ul {
+  display: flex;
+  gap: 15px;
+}
+
+/* Mobile: sembunyikan menu, tampilkan saat toggle ditekan */
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav ul.show {
+    display: flex;
+  }
+}
